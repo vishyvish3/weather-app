@@ -1,0 +1,7 @@
+.title-bar{
+    background-color: #333133;
+    color:white;
+    padding:10px 0px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
