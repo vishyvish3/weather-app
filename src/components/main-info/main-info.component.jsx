@@ -11,7 +11,7 @@ const MainInfo = ({ currentInfo }) => {
                 {/* <div>{currentInfo.dt}</div> */}
             </div>
             <div className="col-6">
-                <div><img className="img-fluid main-info-icon" alt="partly cloudy" src={'http://openweathermap.org/img/wn/' + currentInfo.weather[0].icon + '@2x.png'} /></div>
+                <div><img className="img-fluid main-info-icon" alt="partly cloudy" src={'https://openweathermap.org/img/wn/' + currentInfo.weather[0].icon + '@2x.png'} /></div>
             </div>
             <div className="col-md-12 second-section">
                 <div className="second-section-wrapper">
