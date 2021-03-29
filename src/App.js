@@ -11,12 +11,12 @@ function App() {
   const [refresh, setRefresh] = useState(false);
   const onRefresh = () => {
     setRefresh(!refresh);
-    alert("Refreshed !!");
+    // alert("Refreshed !!");
   }
 
   const [latitude, setLatitude] = useState(13.0827);
   const [longitude, setLongitude] = useState(80.2707);
-  const [placeName, setPlaceName] = useState('')
+  const [placeName, setPlaceName] = useState(null)
 
 
   const savePositionToState = (position) => {
@@ -47,7 +47,7 @@ function App() {
 
   useEffect(() => {
     fetchWeather();
-  }, [refresh, placeName]);// eslint-disable-line react-hooks/exhaustive-deps
+  }, [refresh,latitude, longitude]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
