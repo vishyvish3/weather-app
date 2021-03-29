@@ -1,23 +1,21 @@
 import React from "react";
+import { DayFormat } from '../convert/day';
 import "./daily-forecast.style.css";
-import sunny from "../../img/icons/1.png";
-import test1 from "../../img/icons/3.png";
 
-const DailyForecast = ({dailyInfo}) => {
-    console.log(dailyInfo)
+const DailyForecast = ({ dailyInfo }) => {
+    // console.log(dailyInfo)
+    let info = dailyInfo.map(val => {
+        return (<div key={val.dt} className="row row-section">
+            <div className="col-5 daily-forecast-day"><DayFormat timestamp={val.dt} /></div>
+            <div className="col-3 daily-forecast-temp"> {parseInt(val.temp.eve)}<span>&#176;</span>C</div>
+            <div className="col-3"> <img alt="weather" className="img-fluid daily-forecast-icon" src={'http://openweathermap.org/img/wn/' + val.weather[0].icon + '@2x.png'} /></div>
+        </div>);
+    });
+    info.splice(0, 1);
+    info.splice(-1, 1);
     return (
         <div>
-            <div className="row row-section">
-                <div  className="col-5 daily-forecast-day"> MONDAY</div>
-                <div className="col-3 daily-forecast-temp"> 30<span>&#176;</span>C</div>
-                <div className="col-3"> <img alt="weather" className="img-fluid daily-forecast-icon" src={sunny} /></div>
-            </div>
-
-            <div className="row row-section">
-                <div className="col-5 daily-forecast-day"> TUESDAY</div>
-                <div className="col-3 daily-forecast-temp"> 33<span>&#176;</span>C</div>
-                <div className="col-3"> <img alt="weather" className="img-fluid daily-forecast-icon" src={test1} /></div>
-            </div>
+            {info}
         </div>
     )
 }

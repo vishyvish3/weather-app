@@ -1,15 +1,16 @@
 import React from 'react';
-import './title.style.css'
+import './title.style.css';
 
-const Title = ({timezone}) => {
-    return(
+
+const Title = ({onRefresh, placeName }) => {
+ return (
         <div className="title-bar row">
             <div className="col-md-12">
-            <div className="float-left">CHENNAI</div>
-            <div className="float-right">X</div>
+                <div className="float-left">{placeName}</div>
+                <div onClick={onRefresh} style={{width:"50px"}} className="float-right"><i className="refresh-icon fas fa-sync-alt"></i></div>
+            </div>
         </div>
-        </div>
-        
+
     )
 }
 

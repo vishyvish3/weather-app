@@ -1,19 +1,21 @@
 .main-info-icon{
-    max-width:150px;
+    position: absolute;
+    top: -31px;
+    width: 156px;
 }
 .main-info{
     padding:10px 0px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: #38A7C2;
-    box-shadow: 2px 4px 10px #888;
+    box-shadow: 2px 3px 7px #888;
 }
 
 .main-info-day{
-    font-size: 30px;
+    font-size: 25px;
 }
 .main-info-temp{
-    font-size: 64px;
+    font-size: 49px;
     font-weight: 600;
     position: relative;
     top: -10px;

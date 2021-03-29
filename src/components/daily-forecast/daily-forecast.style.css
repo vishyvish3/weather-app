@@ -1,15 +1,18 @@
 .row-section{
     background-color: #38A7C2;
-    margin-top:10px;
-    margin-bottom: 10px;
-    padding:15px 0px;
+    margin-top: 7px;
+    padding: 12px 0px 10px 0px;
     border-radius: 10px;
-    box-shadow: 2px 4px 10px #888;
+    box-shadow: 2px 3px 7px #888;
 }
 .daily-forecast-day, .daily-forecast-temp{
-    font-size: 25px;
+    font-size: 21px;
+    text-transform: uppercase;
 }
 
 .daily-forecast-icon{
     max-width: 40px;
+}
+.row-section:last-child{
+    margin-bottom: 10px;
 }
