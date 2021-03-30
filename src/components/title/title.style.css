@@ -6,7 +6,13 @@
     border-top-left-radius: 10px;
   }
   .refresh-icon{
-    padding: 3px;
+    padding: 6px;
     float: right;
     cursor: pointer;
   }
+  .place-name{
+    text-transform: uppercase;
+    font-family: "Bebas Neue";
+    font-size: 21px;
+  }
+  

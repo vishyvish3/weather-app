@@ -12,13 +12,16 @@
 }
 
 .main-info-day{
-    font-size: 25px;
+    font-size: 28px;
+    font-family: "Bebas Neue";
 }
 .main-info-temp{
-    font-size: 49px;
-    font-weight: 600;
+    font-family: "Bebas Neue";
+    font-size: 55px;
     position: relative;
     top: -10px;
+    letter-spacing: -1px;
+    height: 64px;
 }
 .second-section{
     padding:5px 10px

@@ -7,7 +7,7 @@ const DayFormat = ({timestamp}) => {
     let day = dateFormat(s, "dddd");
 
     return (
-        <span>{day}</span>
+        <span style={{fontFamily:"Bebas Neue"}}>{day}</span>
     )
 }
 const DateFormat = ({timestamp}) => {
