@@ -14,47 +14,40 @@ function App() {
     // alert("Refreshed !!");
   }
 
-  const [latitude, setLatitude] = useState(0);
-  const [longitude, setLongitude] = useState(0);
+  const [latitude, setLatitude] = useState(13.0827);
+  const [longitude, setLongitude] = useState(80.2707);
   const [placeName, setPlaceName] = useState(null)
 
 
-  
+  const savePositionToState = (position) => {
+    setLatitude(position.coords.latitude);
+    setLongitude(position.coords.longitude);
+  };
 
-  const getGeo = async () => {
+  const fetchWeather = async () => {
     try {
       await window.navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-        }
+        savePositionToState
+      );
+      const res = await axios.get(
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=64e805b88a42b518017315d84d17d855`
+      );
+      setData(res.data);
+      // console.log(res.data);
+      const res1 = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=64e805b88a42b518017315d84d17d855`
       );
       
+      // console.log(res1.data.name);
+      setPlaceName(res1.data.name);
     } catch (err) {
       console.error(err);
     }
   };
 
   useEffect(() => {
-    getGeo();
-  }, []);
-
-  useEffect(()=>{
-    async function fetchData(){
-      const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=64e805b88a42b518017315d84d17d855`
-      );
-      setData(res.data);
-      console.log(res.data);
-      const res1 = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=64e805b88a42b518017315d84d17d855`
-      );
-      
-      console.log(res1.data.name);
-      setPlaceName(res1.data.name);
-    }
-    fetchData();
-  }, [longitude, refresh]);
+    fetchWeather();
+  }, [refresh,latitude, longitude]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
